@@ -1,0 +1,21 @@
+{
+  "name": "pmweb-gulp-boilerplate",
+  "version": "1.0.0",
+  "author": "Afonso Alban",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.24.5",
+    "gulp": "^4.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-data": "^1.2.1",
+    "gulp-if": "^2.0.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-stylus": "^2.6.0",
+    "gulp.spritesmith": "^6.5.0",
+    "nib": "^1.1.2"
+  },
+  "dependencies": {
+    "gulp-uglify": "^3.0.0"
+  }
+}
