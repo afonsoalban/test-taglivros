@@ -1,0 +1,248 @@
+@import 'nib'
+global-reset()
+
+@import 'config/*'
+
+body
+	background $branco
+	height 100%
+	overflow-x hidden
+	position relative
+	
+	@media screen and (max-width: 768px)
+		font-size 14px
+		
+	@media screen and (max-width: 640px)
+		font-size res(18)
+	
+	&.no-scroll
+	&.carregando
+		overflow hidden
+		
+	strong
+		font-weight $boldWeight
+		
+	.dsk
+		@media screen and (max-width 768px)
+			display none
+		
+	.mob
+		display none
+		
+		@media screen and (max-width 768px)
+			display block
+
+main
+	line-height 1.4em
+	
+	h1
+		font-size 45px
+		line-height 1.2em
+		margin-bottom .5em
+		
+		@media screen and (max-width 640px)
+			font-size res(40)
+	
+	h2
+		font-size 38px
+		line-height 1.2em
+		margin-bottom .7em
+		
+		@media screen and (max-width 640px)
+			font-size res(35)
+		
+	a
+		color $highlight
+		
+		&:hover
+			text-decoration underline
+	
+.container
+	position relative
+	width 100%
+	
+	@media screen and (max-width: 640px)
+		overflow hidden	
+
+.content
+	margin 0 auto
+	position relative
+	max-width $mainWidth
+	
+	@media screen and (max-width ($mainWidth + $documentPadding * 2))
+		padding-left 20px
+		padding-right @padding-left
+		max-width ($mainWidth + $documentPadding * 2)
+	
+	.texto
+		position relative
+		z-index 1
+
+.cta
+	background $highlight
+	color $branco
+	display block
+	font-weight $bold
+	overflow hidden
+	position relative
+	text-align center
+	text-transform uppercase
+	max-width 270px
+	line-height 50px
+	
+	&::before
+		background alpha($preto, .1)
+		content ''
+		display block
+		position absolute
+		top 0
+		left 0
+		transform translateY(100%)
+		transition all $time ease-in-out
+		width 100%
+		height 100%
+	
+	&:hover
+		text-decoration none
+		
+		&::before
+			transform translateY(0)
+		
+.livrinho
+	background url(../images/bg_section1.jpg) no-repeat center/cover
+	color $branco
+	
+	@media screen and (max-width 768px)
+		background-image url(../images/bg_section1_m.jpg)
+		
+	h1
+		text-transform uppercase
+	
+	.content
+		display flex
+		justify-content space-between
+		padding-top 60px
+		padding-bottom @padding-top
+		
+		@media screen and (max-width 768px)
+			flex-direction column
+			align-items center
+			padding-top 40px
+			padding-bottom 0
+			
+		@media screen and (max-width 640px)
+			padding res(40) 30px 0
+		
+	.texto
+		margin-left 75px
+		max-width 565px
+		
+		@media screen and (max-width 768px)
+			margin 0
+	
+	.mao
+		position absolute
+		right -75px
+		bottom 0
+		
+		@media screen and (max-width 768px)
+			height res(215)
+			margin-top res(40)
+			margin-bottom res(-30)
+			position static
+
+.escolhido
+	background url(../images/bg_section2.jpg) no-repeat center/cover
+	padding 100px 0
+	text-align center
+	
+	@media screen and (max-width 768px)
+		background-image url(../images/bg_section2_m.jpg)
+		
+	@media screen and (max-width 640px)
+		padding res(100) 0
+	
+	.texto
+		margin auto
+		max-width 490px
+		
+
+.recomendou
+	text-align right
+	
+	h2
+		text-transform uppercase
+		
+		@media screen and (max-width 640px)
+			margin-right auto
+			margin-left auto
+			max-width 80%
+	
+	.content
+		display flex
+		justify-content flex-end
+		padding-top 90px
+		padding-bottom @padding-top
+		
+		@media screen and (max-width 768px)
+			flex-direction column
+			padding-top 50px
+			padding-bottom @padding-top
+		
+		@media screen and (max-width 640px)
+			padding res(50) 30px 0
+
+	.texto
+		margin-right 20px
+		max-width 430px
+		
+		@media screen and (max-width 768px)
+			text-align center
+	
+	.heloisa.dsk
+		position absolute
+		top 0 
+		right 50%
+		height 100%
+	
+	.heloisa.mob
+		@media screen and (max-width 768px)
+			margin-top 25px
+
+.faca-parte
+	background url(../images/bg_section4.jpg) no-repeat center/cover
+	padding 130px 0
+	
+	@media screen and (max-width 768px)
+		background-image url(../images/bg_section4_m.jpg)
+		padding 50px 0 400px
+	
+	@media screen and (max-width 640px)
+		padding res(50) 0 res(400)
+		
+	.texto
+		color $alternateColor
+		font-size 22px
+		max-width 300px
+		
+		@media screen and (max-width 768px)
+			font-size 25px
+			line-height 1.2em
+			text-align center
+		
+		@media screen and (max-width 640px)
+			font-size res(25)
+		
+		a:not(.cta)
+			white-space nowrap
+			
+			@media screen and (max-width 768px)
+				font-size 18px
+		
+	.cta
+		margin 15px 0
+		
+		@media screen and (max-width 768px)
+			margin 15px auto
+			font-size 20px
+		

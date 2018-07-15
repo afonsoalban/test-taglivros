@@ -1,0 +1,179 @@
+//use: +placeholder()
+placeholder()
+	&::-webkit-input-placeholder
+		{block}
+	&:-moz-placeholder
+		{block}
+	&::-moz-placeholder
+		{block}
+	&:-ms-input-placeholder
+		{block}
+
+//use: arrow(top, 15px white, 2px blue)
+arrow(position, arrow, border = 0 white)
+	// Resolve arguments
+	$arrowSize = arrow[0]
+	$arrowColor = arrow[1]
+	$borderWidth = border[0]
+	$borderColor = border[1]
+
+	$oppositePosition = opposite-position(position)
+
+	// Base CSS
+	position relative unless @position
+	background $arrowColor
+
+	// Selector generation
+	$selectors = "&:after"
+	if $borderWidth > 0
+		$selectors = $selectors + ", &:before"
+
+	// Arrow position
+	{$selectors}
+		{$oppositePosition}: 100%
+
+		// Offset
+		if position in (top bottom)
+			left: 50%
+		else
+			top: 50%
+
+		border: solid transparent
+		content: " "
+		height: 0
+		width: 0
+		position: absolute
+		pointer-events: none
+
+	// The arrow itself
+	&:after
+		border-color: rgba(white, 0) // transparent
+		border-{$oppositePosition}-color: $arrowColor
+		border-width: $arrowSize
+
+		if position in (top bottom)
+			margin-left: (- @border-width)
+		else
+			margin-top: (- @border-width)
+
+	// The border
+	if $borderWidth > 0
+		&:before
+			border-color: rgba(white, 0) // transparent
+			border-{$oppositePosition}-color: $borderColor
+			border-width: $arrowSize + $borderWidth
+
+			if position in (top bottom)
+				margin-left: (- @border-width)
+			else
+				margin-top: (- @border-width)
+
+		
+link-hover(cor = $borderColor)
+	position relative
+	
+	&::after
+		background cor
+		content ''
+		display block
+		opacity 0
+		position absolute
+		top 70%
+		left -1px
+		transition $time
+		width calc(100% + 2px)
+		height 1px
+	&:hover::after
+		height 1px
+		opacity 1
+		top calc(125% + 5px)
+
+columns(args)
+	-webkit-columns args
+	-moz-columns args
+	columns args
+
+column-gap(args)
+	-webkit-column-gap args
+	-moz-column-gap args
+	column-gap args
+	
+hyphens(args)
+	-webkit-hyphens args
+	-ms-hyphens args
+	hyphens args
+	
+res(val)
+	t = (val * 100) / 415
+	return unit(t, vw)
+	
+sombra()
+	box-shadow 7px 7px 35px alpha($preto, .3)
+
+filter(args)
+	vendor('filter', args)
+
+barra()
+	background $vermelho
+	content ''
+	display block
+	margin 0 35px
+	width 160px
+	height 6px
+	
+	@media screen and (max-width: 640px)
+		margin 0 res(20)
+		width res(160)
+		height res(6)
+		
+fs(val)
+	t = val / $fontSize
+	return unit(t, rem)
+
+letter-spacing(value)
+	if value is a 'unit'
+		l = value / 1000
+		letter-spacing unit(l, rem)
+	else
+		letter-spacing value
+	
+gradiente()
+	background linear-gradient(left, #f41444, #c529e7)
+
+sombra()
+	box-shadow 0 0 50px alpha($preto, .7)
+	
+borda-interna()
+	&::before
+		border 6px solid $branco
+		content ''
+		display block
+		position absolute
+		top 10px
+		right @top
+		bottom @top
+		left @top
+		z-index 1
+		
+divisoria()
+	position relative
+	
+	&::after
+		background transparent
+		border-left 1px solid alpha($preto, .2)
+		border-right 1px solid alpha($branco, .4)
+		content ''
+		display block
+		position absolute
+		top 0
+		right 0
+		width 2px
+		height 100%
+	
+loader()
+	animation 1s loaderSimples linear infinite
+	background-image url(../images/loader.svg)
+	background-repeat repeat-x
+	background-size contain
+	width 50px
+	height 15px

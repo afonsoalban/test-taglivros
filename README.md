@@ -6,6 +6,8 @@
 ## Melhorias
 Considerando que o avaliador aceita pequenas melhorias e sugestões, listei algumas:
 
+* Alterei o nome do CTA principal de "Associe-se" para "Quero me associar", criando uma relação mais forte com o usuário e a ação que ele vai tomar
+
 ### Não implementadas
 
 * Como a página possui poucas imagens "soltas", não vi a necessidade de criar um sprite (o ganho de performance seria insignificante); mas isso é algo que pode ser considerado em um projeto com mais gráficos

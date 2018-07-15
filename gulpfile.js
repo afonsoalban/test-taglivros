@@ -3,7 +3,6 @@ var data = require('gulp-data');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
 var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
 var cache = require('gulp-cached');
 
@@ -15,7 +14,6 @@ gulp.task('stylus', function () {
 		sourcemap: false
 	}))
 	.on('error', trataErro)
-	// .pipe(sourcemaps.write('../maps'))
 	.pipe(gulp.dest('./assets/css/'))
 	.pipe(browserSync.stream());
 });

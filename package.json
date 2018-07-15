@@ -1,12 +1,12 @@
 {
-  "name": "pmweb-gulp-boilerplate",
+  "name": "afonso_alban_taglivros",
   "version": "1.0.0",
   "author": "Afonso Alban",
   "license": "ISC",
   "private": true,
   "devDependencies": {
     "browser-sync": "^2.24.5",
-    "gulp": "^4.0.0",
+    "gulp": "^3.9.1",
     "gulp-cached": "^1.1.1",
     "gulp-data": "^1.2.1",
     "gulp-sourcemaps": "^2.6.0",
