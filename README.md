@@ -1,7 +1,10 @@
 # Teste TAG Livros
 
 ## Para fazer funcionar
-//
+Basta abrir o arquivo `index.html` no navegador. Os caminhos de arquivo são relativos, então a página deve abrir corretamente no navegador, sem precisar rodar qualquer script.
+
+## Contagem regressiva
+Optei por adicionar o contador no último bloco, transmitindo uma sensação de urgência para aquela ação (associar-se).
 
 ## Melhorias
 Considerando que o avaliador aceita pequenas melhorias e sugestões, listei algumas:
