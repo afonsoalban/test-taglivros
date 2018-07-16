@@ -10,6 +10,7 @@ Optei por adicionar o contador no último bloco, transmitindo uma sensação de 
 Considerando que o avaliador aceita pequenas melhorias e sugestões, listei algumas (algumas não foram implementadas):
 
 * Alterei o nome do CTA principal de "Associe-se" para "Quero me associar", criando uma relação mais forte com o usuário e a ação que ele vai tomar
+* Como é uma landing page, optei por adicionar uma animação simples na entrada dos elementos, oferecendo um atrativo visual ao usuário
 
 ### Não implementadas
 
