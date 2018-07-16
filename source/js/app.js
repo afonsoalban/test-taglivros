@@ -23,7 +23,23 @@ define(['jquery', 'countdown'], function (jQuery, countdown) {
 			);
 			
 			if( !isMobile.phone ){
-				console.log('scroll')
+				require(['TweenMax', 'ScrollMagic', 'animation.gsap'], function (TweenMax, ScrollMagic, AnimationGSAP) {
+					var controller = new ScrollMagic.Controller();
+
+					$('section').each(function () {
+						var $section = $(this);
+
+						new ScrollMagic.Scene({
+							triggerElement: $section[0],
+							triggerHook: .7
+						})
+						.setTween( TweenMax.staggerFrom($section.find('img, .texto > *'), .8, {
+							y: 40, 
+							autoAlpha: 0
+						}, .3) )
+						.addTo(controller);
+					});
+				});
 			}
 		}
 	};
